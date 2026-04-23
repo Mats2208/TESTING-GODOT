@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://chai101pc8ojs"]
+
+[ext_resource type="PackedScene" uid="uid://drqjvda3cfi46" path="res://player.tscn" id="1_f3sb7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f3sb7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3sb7"]
+size = Vector3(1.5625, 4.9101563, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
+albedo_color = Color(1, 0.3529412, 1, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fj7yv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fj7yv"]
+size = Vector3(7.458, 18, 1)
+
+[node name="World" type="Node3D" unique_id=1488725184]
+
+[node name="Player" parent="." unique_id=305301680 instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9714001, -0.25513566)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=732416575]
+transform = Transform3D(6.7678537, 0, 0, 0, 1.191452, 0, 0, 0, 1.3971622, 0, 3.878769, -2.325019)
+size = Vector3(1.5644531, 5.7928467, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D" unique_id=331957182]
+physics_material_override = SubResource("PhysicsMaterial_f3sb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D" unique_id=1676702279]
+transform = Transform3D(0.9999994, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999741, 0, 0, 0)
+shape = SubResource("BoxShape3D_f3sb7")
+
+[node name="Piso" type="CSGBox3D" parent="." unique_id=291555059]
+transform = Transform3D(4.139291, 0, 0, 0, -7.369904e-08, -0.99999994, 0, 1.6860375, -4.3711385e-08, 0, 3.07986e-07, -4.1498985)
+size = Vector3(7.458008, 18.00293, 1)
+material = SubResource("StandardMaterial3D_f3sb7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Piso" unique_id=963798790]
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_fj7yv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Piso/StaticBody3D" unique_id=91304943]
+shape = SubResource("BoxShape3D_fj7yv")

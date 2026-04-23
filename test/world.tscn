@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://k7bmxbhxaikw"]
+
+[ext_resource type="PackedScene" uid="uid://bm47pua54xstq" path="res://test.glb" id="1_f3sb7"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f3sb7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fj7yv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f3sb7"]
+
+[node name="World" type="Node3D" unique_id=2115194937]
+
+[node name="test" parent="." unique_id=708994687 instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1278157, 0, -7.2210417)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="test" unique_id=25558669]
+mesh = SubResource("ArrayMesh_f3sb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test" unique_id=102226731]
+shape = SubResource("BoxShape3D_fj7yv")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=674506681]
+transform = Transform3D(0.8353567, -0.22315694, 0.50237453, -0.046906583, 0.8816229, 0.46961778, -0.5477033, -0.41586304, 0.7260021, 0.3753209, 6.808269, 2.8988762)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1054640803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5915422, 6.371106, 9.644083)
+light_energy = 1.5
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=560001043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.081369, 0, -6.1045656)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=850241926]
+shape = SubResource("CapsuleShape3D_f3sb7")
+
+[node name="Head" type="Node3D" parent="Player" unique_id=1426590325]
+
+[node name="Head" type="Camera3D" parent="Player/Head" unique_id=1668787150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16572762, 0)
+
+[editable path="test"]
