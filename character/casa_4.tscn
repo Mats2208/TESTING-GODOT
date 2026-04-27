@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://buoson540nfv1"]
+
+[ext_resource type="PackedScene" uid="uid://db2ojd7omdpa1" path="res://casa 4.glb" id="1_7u3f0"]
+
+[node name="casa 4" unique_id=622407882 instance=ExtResource("1_7u3f0")]

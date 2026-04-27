@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var speed: float = 7
-@export var jump_force: float = 2
+@export var jump_force: float = 5
 @export var sensibilidad_mouse: float = 0.002
 
 @onready var camera: Camera3D = $Camera3D

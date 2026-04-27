@@ -3,8 +3,16 @@
 [ext_resource type="Script" uid="uid://d3up7fruud7cn" path="res://player.gd" id="1_4flbx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fj7yv"]
+margin = 0.0
+radius = 0.35
+height = 1.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tlwt5"]
+material = SubResource("StandardMaterial3D_4flbx")
+radius = 0.35
+height = 1.7
 
 [node name="Player" type="CharacterBody3D" unique_id=305301680]
 script = ExtResource("1_4flbx")
@@ -16,5 +24,8 @@ shape = SubResource("CapsuleShape3D_fj7yv")
 mesh = SubResource("CapsuleMesh_tlwt5")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2038735478]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94193006, -0.35538226)
-fov = 116.617195
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28441763, -0.50854236)
+fov = 60.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=771022356]
+transform = Transform3D(1, 0, 0, 0, 0.70294803, 0.7112413, 0, -0.7112413, 0.70294803, 0, 3.11097, -0.96892667)

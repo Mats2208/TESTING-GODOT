@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c70t1csga6lck"]
+
+[ext_resource type="PackedScene" uid="uid://cwi7hhw3cb5x3" path="res://Plano.glb" id="1_pnhbd"]
+
+[node name="Plano" unique_id=1597027987 instance=ExtResource("1_pnhbd")]

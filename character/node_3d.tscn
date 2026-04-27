@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://lahuq7kejhj0"]
+
+[ext_resource type="PackedScene" uid="uid://cyvk754r2homl" path="res://casa 3.glb" id="1_a202f"]
+
+[node name="Node3D" type="Node3D" unique_id=982777007]
+
+[node name="casa 3" parent="." unique_id=1515594225 instance=ExtResource("1_a202f")]

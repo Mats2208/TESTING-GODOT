@@ -1,27 +1,35 @@
 [gd_scene format=3 uid="uid://chai101pc8ojs"]
 
 [ext_resource type="PackedScene" uid="uid://drqjvda3cfi46" path="res://player.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://cwi7hhw3cb5x3" path="res://Plano.glb" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://0ea5uulprale" path="res://LEARNING 1.glb" id="1_tlwt5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f3sb7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f3sb7"]
 size = Vector3(1.5625, 4.9101563, 1)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fj7yv"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
 albedo_color = Color(1, 0.3529412, 1, 1)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fj7yv"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_fj7yv"]
-size = Vector3(7.458, 18, 1)
+size = Vector3(11.0163555, 25.055664, 1)
 
 [node name="World" type="Node3D" unique_id=1488725184]
 
+[node name="LEARNING 1" parent="." unique_id=1632289880 instance=ExtResource("1_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134.42633, 1.1935338, -10.137303)
+
+[node name="Plano" parent="." unique_id=1597027987 instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0)
+
 [node name="Player" parent="." unique_id=305301680 instance=ExtResource("1_f3sb7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9714001, -0.25513566)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.04034, 1.5281539, -3.0828552)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=732416575]
-transform = Transform3D(6.7678537, 0, 0, 0, 1.191452, 0, 0, 0, 1.3971622, 0, 3.878769, -2.325019)
+transform = Transform3D(6.7678537, 0, 0, 0, 1.191452, 0, 0, 0, 1.3971622, 0, 4.494, 2.46)
 size = Vector3(1.5644531, 5.7928467, 1)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D" unique_id=331957182]
@@ -31,14 +39,19 @@ physics_material_override = SubResource("PhysicsMaterial_f3sb7")
 transform = Transform3D(0.9999994, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999741, 0, 0, 0)
 shape = SubResource("BoxShape3D_f3sb7")
 
-[node name="Piso" type="CSGBox3D" parent="." unique_id=291555059]
-transform = Transform3D(4.139291, 0, 0, 0, -7.369904e-08, -0.99999994, 0, 1.6860375, -4.3711385e-08, 0, 3.07986e-07, -4.1498985)
-size = Vector3(7.458008, 18.00293, 1)
-material = SubResource("StandardMaterial3D_f3sb7")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Piso" unique_id=963798790]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=963798790]
+transform = Transform3D(40, 0, 0, 0, -6.993822e-07, -1, 0, 16, -4.371139e-08, -7.4802322, 5.6823575e-07, -10.103719)
 disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_fj7yv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Piso/StaticBody3D" unique_id=91304943]
+[node name="Piso" type="CSGBox3D" parent="StaticBody3D" unique_id=291555059]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, -7.1054274e-15, 0.9999999, -0.03587514, -0.07431769, 5.48053e-09)
+size = Vector3(11.072266, 25.06543, 1)
+material = SubResource("StandardMaterial3D_f3sb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=91304943]
+transform = Transform3D(1, 0, 0, 0, 0.99999905, 5.151435e-13, 0, -2.8990144e-12, 0.9999755, 0.0072015524, -0.024902344, -2.8705927e-12)
 shape = SubResource("BoxShape3D_fj7yv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1021308786]
+transform = Transform3D(-0.5972317, -0.16021219, 0.7859047, -0.111198395, 0.98692375, 0.11668847, -0.79432315, -0.017701302, -0.6072375, 0, 29.64033, 0)
